@@ -1,0 +1,287 @@
+ * {
+            box-sizing: border-box;
+        }
+
+        /* Background */
+        body {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            background: linear-gradient(135deg, #d4fc79, #65c466, #08752c);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 25px;
+        }
+
+        /* Main Game Card */
+        .game {
+            background: #f0ffe4;
+            width: 950px;
+            max-width: 100%;
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        h1 {
+            color: #14532d;
+            text-align: center;
+            font-size: 32px;
+            margin-top: 0;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        /* Top Score Board */
+        .score-board {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .score-box {
+            background: #dff5d7;
+            color: #14532d;
+            text-align: center;
+            padding: 15px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 16px;
+            border: 1px solid #c5e8b9;
+        }
+
+        .score-box span {
+            display: block;
+            font-size: 30px;
+            margin-top: 8px;
+        }
+
+        /* Progress Bar */
+        .progress-section {
+            margin-bottom: 25px;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            color: #14532d;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .progress-container {
+            background: #d3e9cd;
+            height: 12px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        #progressBar {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #65c466, #08752c);
+            transition: width 0.4s;
+        }
+
+        /* Two Column Layout */
+        .game-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        /* Left Side */
+        .play-section {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            text-align: center;
+            border: 2px solid #d2ebc9;
+        }
+
+        .play-section h2,
+        .output-section h2 {
+            color: #14532d;
+            margin-top: 0;
+        }
+
+        .choices {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 30px 0;
+        }
+
+        .choice {
+            background: #f0ffe4;
+            border: 2px solid #b5dfad;
+            border-radius: 15px;
+            padding: 12px;
+            font-size: 38px;
+            cursor: pointer;
+            width: 85px;
+            height: 85px;
+            transition: 0.3s;
+        }
+
+        .choice:hover:not(:disabled) {
+            background: #c9f5c2;
+            transform: translateY(-7px);
+            border-color: green;
+        }
+
+        .choice:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .instruction {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Right Side */
+        .output-section {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            text-align: center;
+            border: 2px solid #d2ebc9;
+        }
+
+        .battle {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 35px 0;
+        }
+
+        .hand-box {
+            background: #eaf8e5;
+            width: 115px;
+            height: 115px;
+            border-radius: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 55px;
+            border: 2px solid #c5e8b9;
+        }
+
+        .hand-label {
+            color: #14532d;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        .vs {
+            font-size: 22px;
+            font-weight: bold;
+            color: #777;
+        }
+
+        /* Result Message */
+        #result {
+            background: #eaf8e5;
+            color: #14532d;
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        #description {
+            color: #666;
+            font-size: 14px;
+            min-height: 22px;
+        }
+
+        /* Final Winner */
+        .final-result {
+            display: none;
+            background: #fff4c2;
+            border: 2px solid #e8c65a;
+            padding: 18px;
+            border-radius: 15px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .final-result h2 {
+            color: #805500;
+            margin: 5px;
+        }
+
+        .final-result p {
+            color: #765a1b;
+            font-weight: bold;
+        }
+
+        /* Restart Button */
+        .restart {
+            display: block;
+            margin: 25px auto 0;
+            padding: 13px 30px;
+            background: #08752c;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .restart:hover {
+            background: #03451a;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 650px) {
+
+            .game {
+                padding: 20px;
+            }
+
+            .game-content {
+                grid-template-columns: 1fr;
+            }
+
+            .score-board {
+                gap: 7px;
+            }
+
+            .score-box {
+                font-size: 12px;
+                padding: 12px 5px;
+            }
+
+            .score-box span {
+                font-size: 23px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .choice {
+                width: 72px;
+                height: 72px;
+                font-size: 30px;
+            }
+
+            .hand-box {
+                width: 90px;
+                height: 90px;
+                font-size: 43px;
+            }
+        }

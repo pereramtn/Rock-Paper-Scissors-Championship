@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<head>
+    <title>Rock Paper Scissors Championship</title>
+     
+    <link rel="stylesheet" href="style.css">
+
+       
+
+    
+
+</head>
+
+<body>
+
+    <div class="game">
+
+        <h1>🏆 Rock Paper Scissors</h1>
+
+        <p class="subtitle">
+            10 Rounds Championship - Beat the Computer!
+        </p>
+
+        <!-- Top Score Board -->
+        <div class="score-board">
+
+            <div class="score-box">
+                👤 YOU
+                <span id="playerScore">0</span>
+            </div>
+
+            <div class="score-box">
+                🤖 COMPUTER
+                <span id="computerScore">0</span>
+            </div>
+
+            <div class="score-box">
+                🎯 ROUNDS LEFT
+                <span id="roundsLeft">10</span>
+            </div>
+
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-section">
+
+            <div class="progress-text">
+                <span>Game Progress</span>
+                <span id="roundText">Round 0 / 10</span>
+            </div>
+
+            <div class="progress-container">
+                <div id="progressBar"></div>
+            </div>
+
+        </div>
+
+
+        <!-- Main Two Column Layout -->
+        <div class="game-content">
+
+            <!-- LEFT SIDE - PLAY GAME -->
+            <div class="play-section">
+
+                <h2>🎮 Play Game</h2>
+
+                <p>Choose your hand sign!</p>
+
+                <div class="choices">
+
+                    <button class="choice"
+                        onclick="playGame('rock')"
+                        aria-label="Rock">
+                        ✊
+                    </button>
+
+                    <button class="choice"
+                        onclick="playGame('paper')"
+                        aria-label="Paper">
+                        ✋
+                    </button>
+
+                    <button class="choice"
+                        onclick="playGame('scissors')"
+                        aria-label="Scissors">
+                        ✌️
+                    </button>
+
+                </div>
+
+                <p class="instruction">
+                    ✊ Rock beats Scissors
+                    <br>
+                    ✋ Paper beats Rock
+                    <br>
+                    ✌️ Scissors beats Paper
+                </p>
+
+            </div>
+
+
+            <!-- RIGHT SIDE - OUTPUT -->
+            <div class="output-section">
+
+                <h2>📊 Game Output</h2>
+
+                <p>Round Result</p>
+
+                <div class="battle">
+
+                    <div>
+
+                        <div class="hand-box" id="playerHand">
+                            ❔
+                        </div>
+
+                        <p class="hand-label">YOU</p>
+
+                    </div>
+
+                    <div class="vs">
+                        VS
+                    </div>
+
+                    <div>
+
+                        <div class="hand-box" id="computerHand">
+                            ❔
+                        </div>
+
+                        <p class="hand-label">COMPUTER</p>
+
+                    </div>
+
+                </div>
+
+                <p id="result">
+                    🎮 Let's Start!
+                </p>
+
+                <p id="description">
+                    Select your hand to play the first round.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Final Winner Section -->
+        <div class="final-result" id="finalResult">
+
+            <h2 id="winnerMessage">🏆 Game Finished!</h2>
+
+            <p id="winnerDescription"></p>
+
+        </div>
+
+
+        <!-- Restart -->
+        <button class="restart" onclick="restartGame()">
+            🔄 Restart Championship
+        </button>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    
+    <script src="script.js" defer></script>
+
+</body>
+
+</html>
